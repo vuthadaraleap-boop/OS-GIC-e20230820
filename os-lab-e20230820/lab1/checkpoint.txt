@@ -1,0 +1,2 @@
+stone-copy.txt
+stone-old.txt
