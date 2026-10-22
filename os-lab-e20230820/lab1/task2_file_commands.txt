@@ -1,0 +1,13 @@
+/home/gic-vutha-daraleap/oslab-work/lab1/task2_files
+rocket.txt
+tiger.txt
+This is file rocket
+This is file tiger
+rocket.txt
+rocket_copy.txt
+tiger.txt
+rocket.txt
+rocket_copy.txt
+tiger_renamed.txt
+rocket.txt
+tiger_renamed.txt
