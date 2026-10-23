@@ -1,6 +1,6 @@
     PID TTY          TIME CMD
- 658726 pts/28   00:00:00 bash
- 674031 pts/28   00:00:00 sleep
- 674741 pts/28   00:00:00 sleep
- 674813 pts/28   00:00:00 sleep
- 674924 pts/28   00:00:00 ps
+   1288 pts/0    00:00:00 bash
+   2106 pts/0    00:00:00 sleep
+   2107 pts/0    00:00:00 sleep
+   2108 pts/0    00:00:00 sleep
+   2109 pts/0    00:00:00 ps

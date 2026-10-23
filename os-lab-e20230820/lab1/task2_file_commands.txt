@@ -1,4 +1,4 @@
-/home/gic-vutha-daraleap/oslab-work/lab1/task2_files
+/mnt/c/Users/daral/OS-GIC-e20230820/os-lab-e20230820/lab1/task2_files
 rocket.txt
 tiger.txt
 This is file rocket
