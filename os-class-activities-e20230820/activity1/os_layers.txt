@@ -1,0 +1,15 @@
++----------------------------------------------------------+
+| USER SPACE                                               |
+|  bash   hello_syscall   file_creator_sys                 |
+|  file_reader_sys   dir_list_sys                          |
++----------------------------------------------------------+
+| SYSTEM CALL INTERFACE                                    |
+|  open()    read()    write()    close()                  |
++----------------------------------------------------------+
+| KERNEL  6.18.54.1-microsoft-standard-WSL2                |
+|  modules: bridge   tun   ip_tables                       |
++----------------------------------------------------------+
+| HARDWARE                                                 |
+|  CPU: AMD Ryzen 3 7320U with Radeon Graphics             |
+|  Memory: 3618504 kB (about 3.5 GB)                       |
++----------------------------------------------------------+
