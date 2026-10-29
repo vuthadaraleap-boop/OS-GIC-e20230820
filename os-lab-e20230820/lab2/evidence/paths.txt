@@ -1,0 +1,9 @@
+cd incoming; mv -- "vendor list.txt" ../reports/
+mv -- "/home/gic-vutha-daraleap/oslab-work/lab2/incoming/travel claims.txt" "/home/gic-vutha-daraleap/oslab-work/lab2/reports/"
+cp -- "reports/vendor list.txt" "reports/travel claims.txt" "TechCorp/Finance/"
+cp -- "reports/vendor list.txt" "TechCorp/Finance/archive/first-original.txt"
+cat "../Finance/vendor list.txt"
+cat "/home/gic-vutha-daraleap/oslab-work/lab2/TechCorp/Finance/vendor list.txt"
+Decision: for step 3 I used relative paths because I was already in the lab folder and they are short. Absolute paths would be better in a script or from a different folder, because they work from anywhere.
+Error: cat: 'reports/vendor list.txt': No such file or directory
+Fix: ../../reports/vendor list.txt

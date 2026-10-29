@@ -1,0 +1,6 @@
+reports/README.txt
+reports/travel claims.txt
+reports/vendor list.txt
+TechCorp/Finance/archive/first-original.txt
+TechCorp/Finance/travel claims.txt
+TechCorp/Finance/vendor list.txt
