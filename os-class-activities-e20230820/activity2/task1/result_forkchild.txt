@@ -1,0 +1,10 @@
+total 24
+drwxrwxrwx 1 daral daral  4096 Oct 29 10:08 .
+drwxrwxrwx 1 daral daral  4096 Oct 29 10:07 ..
+-rwxrwxrwx 1 daral daral 16392 Oct 29 10:07 forkchild
+-rwxrwxrwx 1 daral daral   961 Oct 29 10:07 forkchild.c
+-rwxrwxrwx 1 daral daral     0 Oct 29 10:08 result_forkchild.txt
+Parent process (PID: 648) — creating child...
+Parent: waiting for child (PID: 649) to finish...
+Parent: child exited with status 0
+Parent: done.

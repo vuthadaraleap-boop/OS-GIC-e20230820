@@ -1,0 +1,20 @@
+  248  git push
+  249  git config --global user.name "vuthadaraleap-boop"
+  250  git config --global user.email "daraleapyt@gmail.com"
+  251  git restore --staged os-lab-e20230820/lab1/checkpoint.txt os-lab-e20230820/lab1/task1_os_info.txt os-lab-e20230820/lab1/task6_virtualization_check.txt
+  252  git commit -m "Add class activity 1 - System Calls in Practice"
+  253  git push
+  254  ssh gic-vutha-daraleap@ssh2.rathpisey.site
+  255  exit
+  256  cd /mnt/c/Users/daral/OS-GIC-e20230820
+  257  mkdir -p os-class-activities-e20230820/activity2/{task1,task2,task3_shm,task4_mq,screenshots}
+  258  cd os-class-activities-e20230820/activity2/task1
+  259  nano forkchild.c
+  260  cat forkchild.c
+  261  gcc -o forkchild forkchild.c
+  262  ls
+  263  cd /mnt/c/Users/daral/OS-GIC-e20230820/os-class-activities-e20230820/activity2/task1
+  264  ./forkchild > result_forkchild.txt 2>&1
+  265  cat result_forkchild.txt
+  266  pwd
+  267  history | tail -n 20 > command_used_forkchild.txt
