@@ -1,58 +1,167 @@
-# OS Lab 2 Submission — Linux Navigation & File Management
+# OS Lab 2 — Linux Navigation & File Management
 
-- **Student Name:** Vutha Daraleap
-- **Student ID:** e20230820
-- **Ubuntu username on the server:** gic-vutha-daraleap
-- **My values** (`oslab values lab2`): file1 = vendor list.txt, file2 = travel claims.txt, owner = Finance, reader = Support, third = Marketing
+| | |
+|---|---|
+| **Student ID** | e20230820 |
+| **Course** | Operating Systems |
+| **Lab** | Mastering Linux Navigation & File Management |
+| **Lab Type** | Individual |
+
+## Overview
+
+In this lab I played the role of Alex, a junior system administrator at TechCorp Inc. I navigated the Linux filesystem, built a multi-level directory structure for three departments (HR, Engineering, Marketing), organized files with `cp`, `mv` and `rm`, and audited the result with advanced `ls` options.
+
+## Final Directory Structure
+
+```
+lab2/
+├── README.md
+├── task1_basic_navigation.txt
+├── task2_filesystem_exploration.txt
+├── task3_directory_structure.txt
+├── task4_navigation_paths.txt
+├── task5_file_organization.txt
+├── task6_advanced_listing.txt
+└── techcorp/
+    ├── hr/
+    │   ├── policies/       (leave_policy.txt, remote_work.txt)
+    │   └── onboarding/     (checklist.txt, handbook.txt, leave_policy.txt, welcome_guide.txt)
+    ├── engineering/
+    │   ├── frontend/       (frontend_config.txt, index.html, styles.css)
+    │   ├── backend/        (server_config.txt, pipeline_backup.txt, app.js, database.sql)
+    │   └── devops/         (pipeline.txt, server_notice.txt, security_audit.txt, Dockerfile, docker-compose.yml)
+    └── marketing/
+        ├── campaigns/      (q1_2026_launch.txt, social_media.txt)
+        └── assets/         (logo.png, banner.jpg, brochure.pdf, logo_brief.txt)
+```
 
 ---
 
-## Core 1: Build the Company Folders
+## Task 1 — Basic Navigation Warm-Up
 
-I created the department folders with one command:
+**Commands used:** `pwd`, `ls`, `ls -la`, `cd`, `cd ~`
+
+I printed my current location, listed my home directory (including hidden files), moved to the root directory `/`, and returned home with `cd ~`.
+
+**Output file:** [task1_basic_navigation.txt](task1_basic_navigation.txt)
+
+---
+
+## Task 2 — Exploring the File System
+
+**Commands used:** `cd` (absolute paths), `pwd`, `ls`, `ls -la`
+
+I visited the key system directories and recorded their contents:
+
+| Directory | Purpose |
+|---|---|
+| `/` | Root of the filesystem; every other path starts here |
+| `/etc` | System-wide configuration files |
+| `/var` | Variable data such as logs and caches |
+| `/home` | Home directories of users |
+| `/tmp` | Temporary files |
+
+**Output file:** [task2_filesystem_exploration.txt](task2_filesystem_exploration.txt)
+
+---
+
+## Task 3 — Building the Company Directory Structure
+
+**Commands used:** `mkdir -p`, `touch`, `echo`, `tree`
+
+I created the whole tree in one command using brace expansion:
 
 ```bash
-mkdir -p "TechCorp/$owner/archive" "TechCorp/$reader" "TechCorp/$third"
+mkdir -p techcorp/{hr/{policies,onboarding},engineering/{frontend,backend,devops},marketing/{campaigns,assets}}
 ```
 
-`find TechCorp -type d` showed `TechCorp`, `TechCorp/Finance`, `TechCorp/Finance/archive`, `TechCorp/Support` and `TechCorp/Marketing`. The two reports in `incoming/` contain `amount,455` (`vendor list.txt`) and `amount,457` (`travel claims.txt`). I used the variables in double quotes because both file names have a space. Without quotes the shell splits `vendor list.txt` into two words, and `ls` reported that `incoming/vendor` and `list.txt` do not exist.
+Then I filled the folders with placeholder files using `echo` (files with content) and `touch` (empty files), and saved the structure with `tree`.
 
-## Core 2: Move and Copy With My Own Paths
+**Output file:** [task3_directory_structure.txt](task3_directory_structure.txt)
 
-1. From inside `incoming/` I moved the first report with a **relative** destination: `mv -- "$file1" ../reports/`. `..` goes up one folder, and then `reports/` is next to `incoming/`.
-2. From the lab folder I moved the second report with **absolute** paths for the source and the destination, both starting with `$OSLAB_WORKSPACE/lab2/`.
-3. I copied both reports from `reports/` into `TechCorp/Finance/` with `cp`. The originals stayed in `reports/`.
-4. I copied the first report into `TechCorp/Finance/archive/` with the new name `first-original.txt`.
-5. From inside `TechCorp/Support/` I read the first report in `TechCorp/Finance/` with a relative path (`../Finance/vendor list.txt`) and with an absolute path. Both printed `amount,455`.
+---
 
-**My decision (step 3):** I used relative paths, because I was already in the lab folder and they are short. Absolute paths are better in a script, or when the folder I start from can change, because they mean the same place from anywhere. The commands are saved in `evidence/paths.txt`.
+## Task 4 — Navigating with Absolute and Relative Paths
 
-## Core 3: Prove It
+**Commands used:** `cd` (absolute and relative), `..`, `.`, `cd -`, `pwd`
 
-- **Identical copies:** `cmp` printed nothing for both reports, so the copies in `TechCorp/Finance/` have exactly the same bytes as the files in `reports/`. A name in `ls` would not prove that.
-- **Path error on purpose:** From `TechCorp/Support/` I ran `cat "reports/$file1"`. It failed with `No such file or directory`, although the file exists. A relative path starts from the folder I am in, and there is no `reports` folder inside `Support`.
-- **Fix:** `../../reports/vendor list.txt`. The first `..` goes from `Support` to `TechCorp`, and the second goes to the lab folder, where `reports/` is.
-- **Final list:** `find incoming reports TechCorp -type f | sort | tee evidence/tree.txt` saved the list of files. `incoming/` is empty, because `mv` moved both reports out.
-- `oslab check lab2` showed `milestones: 5/5`.
+I moved between departments using absolute paths, relative paths, `..` for the parent directory, and `cd -` to return to the previous directory.
 
-## My Prediction: Confirmed or Corrected
+**Challenge commands:**
 
-(Fill in after `oslab debrief lab2`.)
+```bash
+cd techcorp/engineering/backend                    # 8a: relative path
+cd ../../marketing/assets                          # 8b: only .. shortcuts
+cd /usr/bin                                        # 8c: absolute path
+cd -                                               # 8d: back to previous directory
+cd ~/os-gic-e20230820/os-lab-e20230820/lab2/techcorp/hr/onboarding   # 8e: any method
+```
 
-- **Answer 1:** confirmed or corrected, and what I saw.
-- **Answer 2:** confirmed or corrected, and what I saw.
-- **Answer 3:** confirmed or corrected, and what I saw.
-- **Answer 4:** confirmed or corrected, and what I saw.
-- **Answer 5:** confirmed or corrected, and what I saw.
+**Output file:** [task4_navigation_paths.txt](task4_navigation_paths.txt)
 
-## Live Checkpoint
+---
 
-(Fill in after the checkpoint. The output is saved in `evidence/checkpoint.txt`.)
+## Task 5 — Organizing Files Across Directories
 
-## Plus / Challenge (only if you did them)
+**Commands used:** `cp`, `mv`, `rm`, `ls`, `tree`
 
-Not done.
+I fixed misplaced files by moving, copying, renaming and removing them with relative paths:
 
-## AI Note (optional)
+- Moved `server_notice.txt` from marketing to `engineering/devops/`
+- Moved `logo_brief.txt` from backend to `marketing/assets/`
+- Removed `temp_debug.log` from `hr/policies/`
+- Moved `handbook.txt` from devops to `hr/onboarding/`
+- Copied `leave_policy.txt` to `hr/onboarding/`
+- Renamed `q1_launch.txt` to `q1_2026_launch.txt`
 
-An AI tool gave me the commands for Core 2 and Core 3. I ran them myself, checked each result with `ls`, `find` and `cmp`, and read the error messages to see why they happened.
+**Challenge commands:**
+
+```bash
+# 9a: create in the wrong place, then move to the right one
+echo "Annual Security Audit Report 2026" > techcorp/hr/policies/security_audit.txt
+mv techcorp/hr/policies/security_audit.txt techcorp/engineering/devops/
+
+# 9b: copy for backup
+cp techcorp/engineering/devops/pipeline.txt techcorp/engineering/backend/pipeline_backup.txt
+
+# 9c: create three junk files, remove them with one command
+touch techcorp/marketing/campaigns/{draft1.tmp,draft2.tmp,old_notes.tmp}
+rm techcorp/marketing/campaigns/*.tmp
+
+# 9d: rename in the same directory
+mv techcorp/engineering/frontend/app_config.txt techcorp/engineering/frontend/frontend_config.txt
+```
+
+**Output file:** [task5_file_organization.txt](task5_file_organization.txt)
+
+---
+
+## Task 6 — Advanced Listing & Directory Audit
+
+**Commands used:** `ls -R`, `ls -lS`, `ls -lt`, `ls -lh`, `ls -rlS`, `ls -rlt`, `ls -lhRS`
+
+| Flag | Meaning |
+|---|---|
+| `-R` | Recursive listing of all subdirectories |
+| `-l` | Long format |
+| `-S` | Sort by size, largest first |
+| `-t` | Sort by modification time, newest first |
+| `-h` | Human-readable sizes (K, M, G) |
+| `-r` | Reverse the sort order |
+
+**Challenge commands:**
+
+```bash
+ls -lt techcorp/hr/onboarding/            # 6a: newest modified first
+ls -lhR techcorp/marketing/               # 6b: recursive, long, human-readable
+ls -rlS techcorp/engineering/devops/      # 6c: smallest files first
+ls -ldhS ~/.[!.]*                         # 6d: hidden files, largest first
+```
+
+**Output file:** [task6_advanced_listing.txt](task6_advanced_listing.txt)
+
+---
+
+## Conclusion
+
+In this lab I practiced navigating the Linux filesystem with absolute and relative paths, built a nested directory structure with `mkdir -p`, organized files with `cp`, `mv` and `rm`, and used advanced `ls` options to list and sort directory contents. The main thing I learned is how much faster relative paths and `..` make moving around once I know where I am with `pwd`.
