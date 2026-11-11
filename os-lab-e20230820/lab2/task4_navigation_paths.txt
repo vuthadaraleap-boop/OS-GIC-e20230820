@@ -1,0 +1,32 @@
+=== Task 4: Navigation with Paths ===
+--- Absolute path to HR/policies ---
+/home/gic-vutha-daraleap/os-gic-e20230820/os-lab-e20230820/lab2/techcorp/hr/policies
+leave_policy.txt
+remote_work.txt
+--- Up to hr/ ---
+/home/gic-vutha-daraleap/os-gic-e20230820/os-lab-e20230820/lab2/techcorp/hr
+--- Relative path to onboarding/ ---
+/home/gic-vutha-daraleap/os-gic-e20230820/os-lab-e20230820/lab2/techcorp/hr/onboarding
+checklist.txt
+welcome_guide.txt
+--- Sideways to engineering/frontend/ ---
+/home/gic-vutha-daraleap/os-gic-e20230820/os-lab-e20230820/lab2/techcorp/engineering/frontend
+app_config.txt
+index.html
+styles.css
+--- Up two levels to techcorp/ ---
+/home/gic-vutha-daraleap/os-gic-e20230820/os-lab-e20230820/lab2/techcorp
+--- Absolute path to marketing/campaigns/ ---
+/home/gic-vutha-daraleap/os-gic-e20230820/os-lab-e20230820/lab2/techcorp/marketing/campaigns
+q1_launch.txt
+social_media.txt
+--- cd - (back to previous directory) ---
+/home/gic-vutha-daraleap/os-gic-e20230820/os-lab-e20230820/lab2/techcorp
+--- Challenge Navigation ---
+/home/gic-vutha-daraleap/os-gic-e20230820/os-lab-e20230820/lab2/techcorp/engineering/backend
+/home/gic-vutha-daraleap/os-gic-e20230820/os-lab-e20230820/lab2/techcorp/marketing/assets
+/usr/bin
+/home/gic-vutha-daraleap/os-gic-e20230820/os-lab-e20230820/lab2/techcorp/marketing/assets
+/home/gic-vutha-daraleap/os-gic-e20230820/os-lab-e20230820/lab2/techcorp/hr/onboarding
+checklist.txt
+welcome_guide.txt

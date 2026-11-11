@@ -1,0 +1,233 @@
+=== Task 6: Advanced Listing & Directory Audit ===
+--- Recursive Listing (ls -R) ---
+techcorp:
+engineering
+hr
+marketing
+
+techcorp/engineering:
+backend
+devops
+frontend
+
+techcorp/engineering/backend:
+app.js
+database.sql
+pipeline_backup.txt
+server_config.txt
+
+techcorp/engineering/devops:
+Dockerfile
+docker-compose.yml
+pipeline.txt
+security_audit.txt
+server_notice.txt
+
+techcorp/engineering/frontend:
+frontend_config.txt
+index.html
+styles.css
+
+techcorp/hr:
+onboarding
+policies
+
+techcorp/hr/onboarding:
+checklist.txt
+handbook.txt
+leave_policy.txt
+welcome_guide.txt
+
+techcorp/hr/policies:
+leave_policy.txt
+remote_work.txt
+
+techcorp/marketing:
+assets
+campaigns
+
+techcorp/marketing/assets:
+banner.jpg
+brochure.pdf
+logo.png
+logo_brief.txt
+
+techcorp/marketing/campaigns:
+q1_2026_launch.txt
+social_media.txt
+
+--- Sort by Size: engineering/ (ls -lS) ---
+techcorp/engineering/frontend/:
+total 4
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 26 Nov 11 20:41 frontend_config.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:41 styles.css
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:41 index.html
+
+techcorp/engineering/backend/:
+total 8
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 29 Nov 11 20:52 pipeline_backup.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 29 Nov 11 20:41 server_config.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:41 database.sql
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:41 app.js
+
+techcorp/engineering/devops/:
+total 12
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 48 Nov 11 20:42 server_notice.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 34 Nov 11 20:52 security_audit.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 29 Nov 11 20:41 pipeline.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:41 docker-compose.yml
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:41 Dockerfile
+
+--- Sort by Time: techcorp/ (ls -lt) ---
+techcorp/marketing/campaigns/:
+total 8
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 35 Nov 11 20:41 social_media.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 32 Nov 11 20:41 q1_2026_launch.txt
+
+techcorp/hr/policies/:
+total 8
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 32 Nov 11 20:41 remote_work.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 39 Nov 11 20:41 leave_policy.txt
+
+techcorp/hr/onboarding/:
+total 12
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 39 Nov 11 20:44 leave_policy.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 23 Nov 11 20:42 handbook.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:41 checklist.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 52 Nov 11 20:41 welcome_guide.txt
+
+--- Human-Readable (ls -lh) ---
+techcorp/engineering/devops/:
+total 12K
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:41 Dockerfile
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:41 docker-compose.yml
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 29 Nov 11 20:41 pipeline.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 34 Nov 11 20:52 security_audit.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 48 Nov 11 20:42 server_notice.txt
+
+techcorp/marketing/assets/:
+total 4.0K
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:42 banner.jpg
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:42 brochure.pdf
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:42 logo.png
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 22 Nov 11 20:42 logo_brief.txt
+
+--- Reverse Sort by Size (ls -rlS) ---
+total 8
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:41 app.js
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:41 database.sql
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 29 Nov 11 20:41 server_config.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 29 Nov 11 20:52 pipeline_backup.txt
+
+--- Reverse Sort by Time (ls -rlt) ---
+total 12
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 52 Nov 11 20:41 welcome_guide.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:41 checklist.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 23 Nov 11 20:42 handbook.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 39 Nov 11 20:44 leave_policy.txt
+
+--- Combined: Recursive + Human-Readable + Sort by Size (ls -lhRS) ---
+techcorp/:
+total 12K
+drwxrwxr-x 5 gic-vutha-daraleap gic-vutha-daraleap 4.0K Nov 11 20:41 engineering
+drwxrwxr-x 4 gic-vutha-daraleap gic-vutha-daraleap 4.0K Nov 11 20:43 marketing
+drwxrwxr-x 4 gic-vutha-daraleap gic-vutha-daraleap 4.0K Nov 11 20:41 hr
+
+techcorp/engineering:
+total 12K
+drwxrwxr-x 2 gic-vutha-daraleap gic-vutha-daraleap 4.0K Nov 11 20:52 devops
+drwxrwxr-x 2 gic-vutha-daraleap gic-vutha-daraleap 4.0K Nov 11 20:53 frontend
+drwxrwxr-x 2 gic-vutha-daraleap gic-vutha-daraleap 4.0K Nov 11 20:52 backend
+
+techcorp/engineering/devops:
+total 12K
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 48 Nov 11 20:42 server_notice.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 34 Nov 11 20:52 security_audit.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 29 Nov 11 20:41 pipeline.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:41 docker-compose.yml
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:41 Dockerfile
+
+techcorp/engineering/frontend:
+total 4.0K
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 26 Nov 11 20:41 frontend_config.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:41 styles.css
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:41 index.html
+
+techcorp/engineering/backend:
+total 8.0K
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 29 Nov 11 20:52 pipeline_backup.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 29 Nov 11 20:41 server_config.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:41 database.sql
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:41 app.js
+
+techcorp/marketing:
+total 8.0K
+drwxrwxr-x 2 gic-vutha-daraleap gic-vutha-daraleap 4.0K Nov 11 20:52 campaigns
+drwxrwxr-x 2 gic-vutha-daraleap gic-vutha-daraleap 4.0K Nov 11 20:43 assets
+
+techcorp/marketing/campaigns:
+total 8.0K
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 35 Nov 11 20:41 social_media.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 32 Nov 11 20:41 q1_2026_launch.txt
+
+techcorp/marketing/assets:
+total 4.0K
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 22 Nov 11 20:42 logo_brief.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:42 logo.png
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:42 brochure.pdf
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:42 banner.jpg
+
+techcorp/hr:
+total 8.0K
+drwxrwxr-x 2 gic-vutha-daraleap gic-vutha-daraleap 4.0K Nov 11 20:52 policies
+drwxrwxr-x 2 gic-vutha-daraleap gic-vutha-daraleap 4.0K Nov 11 20:44 onboarding
+
+techcorp/hr/policies:
+total 8.0K
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 39 Nov 11 20:41 leave_policy.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 32 Nov 11 20:41 remote_work.txt
+
+techcorp/hr/onboarding:
+total 12K
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 52 Nov 11 20:41 welcome_guide.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 39 Nov 11 20:44 leave_policy.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 23 Nov 11 20:42 handbook.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:41 checklist.txt
+
+--- Challenge Investigation ---
+total 12
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 39 Nov 11 20:44 leave_policy.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 23 Nov 11 20:42 handbook.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:41 checklist.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 52 Nov 11 20:41 welcome_guide.txt
+techcorp/marketing/:
+total 8.0K
+drwxrwxr-x 2 gic-vutha-daraleap gic-vutha-daraleap 4.0K Nov 11 20:43 assets
+drwxrwxr-x 2 gic-vutha-daraleap gic-vutha-daraleap 4.0K Nov 11 20:52 campaigns
+
+techcorp/marketing/assets:
+total 4.0K
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:42 banner.jpg
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:42 brochure.pdf
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:42 logo.png
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 22 Nov 11 20:42 logo_brief.txt
+
+techcorp/marketing/campaigns:
+total 8.0K
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 32 Nov 11 20:41 q1_2026_launch.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 35 Nov 11 20:41 social_media.txt
+total 12
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:41 Dockerfile
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap  0 Nov 11 20:41 docker-compose.yml
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 29 Nov 11 20:41 pipeline.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 34 Nov 11 20:52 security_audit.txt
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 48 Nov 11 20:42 server_notice.txt
+-rw------- 1 gic-vutha-daraleap gic-vutha-daraleap  11K Nov  4 12:56 .bash_history
+drwx------ 2 gic-vutha-daraleap gic-vutha-daraleap 4.0K Oct  8 15:56 .cache
+drwx------ 3 gic-vutha-daraleap gic-vutha-daraleap 4.0K Oct 29 09:25 .local
+drwx------ 2 gic-vutha-daraleap gic-vutha-daraleap 4.0K Oct 23 11:01 .ssh
+-rw-r--r-- 1 gic-vutha-daraleap gic-vutha-daraleap 3.7K Feb 13  2026 .bashrc
+-rw-r--r-- 1 gic-vutha-daraleap gic-vutha-daraleap  807 Feb 13  2026 .profile
+-rw-r--r-- 1 gic-vutha-daraleap gic-vutha-daraleap  220 Feb 13  2026 .bash_logout
+-rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap   93 Oct 23 13:36 .gitconfig
+-rw------- 1 gic-vutha-daraleap gic-vutha-daraleap   20 Oct 23 22:55 .lesshst

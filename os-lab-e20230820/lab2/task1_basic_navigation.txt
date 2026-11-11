@@ -1,0 +1,45 @@
+/home/gic-vutha-daraleap
+total 72
+drwxr-x---+ 10 gic-vutha-daraleap gic-vutha-daraleap  4096 Nov 11 20:30 .
+drwxr-xr-x  63 root               root                4096 Oct  7 20:53 ..
+-rw-------   1 gic-vutha-daraleap gic-vutha-daraleap 10987 Nov  4 12:56 .bash_history
+-rw-r--r--   1 gic-vutha-daraleap gic-vutha-daraleap   220 Feb 13  2026 .bash_logout
+-rw-r--r--   1 gic-vutha-daraleap gic-vutha-daraleap  3771 Feb 13  2026 .bashrc
+drwx------   2 gic-vutha-daraleap gic-vutha-daraleap  4096 Oct  8 15:56 .cache
+-rw-rw-r--   1 gic-vutha-daraleap gic-vutha-daraleap    93 Oct 23 13:36 .gitconfig
+-rw-------   1 gic-vutha-daraleap gic-vutha-daraleap    20 Oct 23 22:55 .lesshst
+drwx------   3 gic-vutha-daraleap gic-vutha-daraleap  4096 Oct 29 09:25 .local
+-rw-r--r--   1 gic-vutha-daraleap gic-vutha-daraleap   807 Feb 13  2026 .profile
+drwx------   2 gic-vutha-daraleap gic-vutha-daraleap  4096 Oct 23 11:01 .ssh
+drwxrwxr-x   4 gic-vutha-daraleap gic-vutha-daraleap  4096 Oct 22 15:40 backup-old-lab
+drwxrwxr-x   2 gic-vutha-daraleap gic-vutha-daraleap  4096 Oct 23 21:39 lab1
+drwxrwxr-x   2 gic-vutha-daraleap gic-vutha-daraleap  4096 Nov 11 20:30 lab2
+drwxrwxr-x   5 gic-vutha-daraleap gic-vutha-daraleap  4096 Oct 28 14:30 os-gic-e20230820
+drwx------   5 gic-vutha-daraleap gic-vutha-daraleap  4096 Oct 28 14:41 oslab-work
+--- Root directory (/) ---
+/
+bin
+boot
+cdrom
+dev
+etc
+home
+lib
+lib64
+lost+found
+media
+mnt
+opt
+proc
+root
+run
+sbin
+snap
+srv
+swap.img
+sys
+tmp
+usr
+var
+--- Back to home ---
+/home/gic-vutha-daraleap

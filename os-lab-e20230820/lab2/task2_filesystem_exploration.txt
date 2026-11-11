@@ -1,0 +1,345 @@
+/
+total 4194380
+drwxr-xr-x  20 root root       4096 Oct  5 20:51 .
+drwxr-xr-x  20 root root       4096 Oct  5 20:51 ..
+lrwxrwxrwx   1 root root          7 Apr 20  2026 bin -> usr/bin
+drwxr-xr-x   4 root root       4096 Nov 11 06:42 boot
+dr-xr-xr-x   2 root root       4096 Aug 26 12:03 cdrom
+drwxr-xr-x  21 root root       4080 Oct  7 22:55 dev
+drwxr-xr-x 114 root root       4096 Nov 11 06:35 etc
+drwxr-xr-x  63 root root       4096 Oct  7 20:53 home
+lrwxrwxrwx   1 root root          7 Apr 20  2026 lib -> usr/lib
+lrwxrwxrwx   1 root root          9 Apr 20  2026 lib64 -> usr/lib64
+drwx------   2 root root      16384 Oct  5 20:46 lost+found
+drwxr-xr-x   2 root root       4096 Aug 26 11:45 media
+drwxr-xr-x   2 root root       4096 Aug 26 11:45 mnt
+drwxr-xr-x   3 root root       4096 Oct  7 23:05 opt
+dr-xr-xr-x 266 root root          0 Oct  7 22:55 proc
+drwx------   6 root root       4096 Nov  6 07:51 root
+drwxr-xr-x  36 root root       1100 Nov 11 20:30 run
+lrwxrwxrwx   1 root root          8 Apr 20  2026 sbin -> usr/sbin
+drwxr-xr-x   6 root root       4096 Aug 26 11:47 snap
+drwxr-xr-x   2 root root       4096 Aug 26 11:45 srv
+-rw-------   1 root root 4294967296 Oct  5 20:51 swap.img
+dr-xr-xr-x  13 root root          0 Oct 22 00:14 sys
+drwxrwxrwt  28 root root        600 Nov 11 20:20 tmp
+drwxr-xr-x  12 root root       4096 Aug 26 11:45 usr
+drwxr-xr-x  13 root root       4096 Oct  5 21:04 var
+--- /etc ---
+/etc
+ModemManager
+PackageKit
+UPower
+X11
+adduser.conf
+alternatives
+apparmor
+apparmor.d
+apport
+apt
+bash.bashrc
+bash_completion
+bash_completion.d
+bindresvport.blacklist
+binfmt.d
+ca-certificates
+ca-certificates.conf
+ca-certificates.conf.dpkg-old
+chrony
+clickhouse-client
+clickhouse-keeper
+clickhouse-server
+cloud
+cloudflared
+console-setup
+credstore
+credstore.encrypted
+cron.d
+cron.daily
+cron.hourly
+cron.monthly
+cron.weekly
+cron.yearly
+crontab
+crypttab
+dbus-1
+debconf.conf
+debian_version
+debuginfod
+default
+deluser.conf
+depmod.d
+dhcp
+dhcpcd.conf
+dpkg
+dracut.conf
+dracut.conf.d
+e2scrub.conf
+environment
+ethertypes
+fstab
+fuse.conf
+fwupd
+gai.conf
+gnutls
+gprofng.rc
+groff
+group
+group-
+grub.d
+gshadow
+gshadow-
+gss
+hdparm.conf
+host.conf
+hostname
+hosts
+hosts.allow
+hosts.deny
+init.d
+initramfs-tools
+inputrc
+iscsi
+issue
+issue.net
+kdump
+kernel
+landscape
+ld.so.cache
+ld.so.conf
+ld.so.conf.d
+ldap
+legal
+libaudit.conf
+libblockdev
+libibverbs.d
+libnl-3
+locale.conf
+locale.gen
+localtime
+logcheck
+login.defs
+logrotate.conf
+logrotate.d
+lsb-release
+lvm
+machine-id
+magic
+magic.mime
+manpath.config
+mdadm
+mime.types
+mke2fs.conf
+modprobe.d
+modules
+modules-load.d
+mtab
+multipath
+multipath.conf
+nanorc
+needrestart
+netconfig
+netplan
+network
+networkd-dispatcher
+networks
+newt
+nftables.conf
+nsswitch.conf
+opt
+os-release
+overlayroot.conf
+pam.conf
+pam.d
+passwd
+passwd-
+perl
+pki
+plymouth
+pm
+polkit-1
+ppp
+profile
+profile.d
+protocols
+python3
+python3.14
+qemu
+rc0.d
+rc1.d
+rc2.d
+rc3.d
+rc4.d
+rc5.d
+rc6.d
+rcS.d
+resolv.conf
+rmt
+rpc
+rsyslog.conf
+rsyslog.d
+screenrc
+security
+selinux
+sensors.d
+sensors3.conf
+services
+sgml
+shadow
+shadow-
+shells
+skel
+sos
+ssh
+ssl
+subgid
+subgid-
+subuid
+subuid-
+sudo.conf
+sudo_logsrvd.conf
+sudoers
+sudoers.d
+supercat
+sysctl.d
+sysstat
+systemd
+terminfo
+thermald
+tmpfiles.d
+tpm2-tss
+ubuntu-advantage
+ucf.conf
+udev
+udisks2
+ufw
+update-manager
+update-motd.d
+update-notifier
+usb_modeswitch.conf
+usb_modeswitch.d
+vconsole.conf
+vim
+vmware-tools
+vtrgb
+wgetrc
+xattr.conf
+xdg
+xml
+zsh_command_not_found
+--- /var ---
+/var
+backups
+cache
+crash
+lib
+local
+lock
+log
+mail
+opt
+run
+snap
+spool
+tmp
+--- /home ---
+/home
+total 252
+drwxr-xr-x                                                             63 root                   root                   4096 Oct  7 20:53 .
+drwxr-xr-x                                                             20 root                   root                   4096 Oct  5 20:51 ..
+drwxr-x---+                                                             4 gic-am-chedthameanrith gic-am-chedthameanrith 4096 Oct 20 08:07 gic-am-chedthameanrith
+drwxr-x---+                                                             6 gic-aov-cheasin        gic-aov-cheasin        4096 Oct 23 08:46 gic-aov-cheasin
+drwxr-x---+                                                             7 gic-be-mengseang       gic-be-mengseang       4096 Nov  6 15:23 gic-be-mengseang
+drwxr-x---+                                                             6 gic-bora-picheth       gic-bora-picheth       4096 Oct 16 09:47 gic-bora-picheth
+drwxr-x---+                                                             8 gic-borin-powiney      gic-borin-powiney      4096 Nov  7 17:28 gic-borin-powiney
+drwxr-x---+                                                             7 gic-chea-piseth        gic-chea-piseth        4096 Nov 11 17:49 gic-chea-piseth
+drwxr-x---+                                                             7 gic-chea-somanarath    gic-chea-somanarath    4096 Oct 14 10:21 gic-chea-somanarath
+drwxr-x---+                                                             2 gic-cheng-sakda        gic-cheng-sakda        4096 Oct  7 20:53 gic-cheng-sakda
+drwxr-x---+                                                             5 gic-chhay-sereivesoth  gic-chhay-sereivesoth  4096 Nov 10 12:12 gic-chhay-sereivesoth
+drwxr-x---+                                                            11 gic-chhem-sophea       gic-chhem-sophea       4096 Oct 16 17:13 gic-chhem-sophea
+drwxr-x---+                                                             2 gic-chhon-pheakdey     gic-chhon-pheakdey     4096 Oct  7 20:53 gic-chhon-pheakdey
+drwxr-x---+                                                             6 gic-chin-rothsophea    gic-chin-rothsophea    4096 Nov  8 19:35 gic-chin-rothsophea
+drwxr-x---+                                                             2 gic-chum-sovicheat     gic-chum-sovicheat     4096 Oct  7 20:53 gic-chum-sovicheat
+drwxr-x---+                                                             7 gic-din-mengsea        gic-din-mengsea        4096 Nov  6 08:16 gic-din-mengsea
+drwxr-x---+                                                             8 gic-em-mengleang       gic-em-mengleang       4096 Oct 19 14:47 gic-em-mengleang
+drwxr-x---+                                                             8 gic-han-mengan         gic-han-mengan         4096 Oct 30 01:50 gic-han-mengan
+drwxr-x---+                                                             6 gic-hao-ratha          gic-hao-ratha          4096 Oct 30 08:17 gic-hao-ratha
+drwxr-x---+                                                             6 gic-hen-sopanha        gic-hen-sopanha        4096 Oct 26 08:08 gic-hen-sopanha
+drwxr-x---+                                                             6 gic-heng-meylorng      gic-heng-meylorng      4096 Oct 23 15:56 gic-heng-meylorng
+drwxr-x---+                                                            13 gic-him-menghou        gic-him-menghou        4096 Oct 22 22:49 gic-him-menghou
+drwxr-x---+                                                             2 gic-hong-sothearith    gic-hong-sothearith    4096 Oct  7 20:53 gic-hong-sothearith
+drwxr-x---+                                                             8 gic-hour-samnang       gic-hour-samnang       4096 Nov  6 08:42 gic-hour-samnang
+drwxr-x---+                                                             7 gic-huong-phynann      gic-huong-phynann      4096 Nov 11 09:12 gic-huong-phynann
+drwxr-x---+                                                             2 gic-keo-siengheng      gic-keo-siengheng      4096 Oct  7 20:53 gic-keo-siengheng
+drwxr-x---+                                                             8 gic-khim-vyseyha       gic-khim-vyseyha       4096 Oct 29 14:38 gic-khim-vyseyha
+drwxr-x---+                                                             7 gic-khorn-victor       gic-khorn-victor       4096 Oct 22 19:08 gic-khorn-victor
+drwxr-x---+                                                             4 gic-kim-boramey        gic-kim-boramey        4096 Oct 23 07:50 gic-kim-boramey
+drwxr-x---+                                                             7 gic-kriya-mustafa      gic-kriya-mustafa      4096 Oct 22 21:30 gic-kriya-mustafa
+drwxr-x---+                                                             6 gic-kry-menghong       gic-kry-menghong       4096 Nov  9 11:00 gic-kry-menghong
+drwxr-x---+                                                             8 gic-ly-nyheang         gic-ly-nyheang         4096 Oct 23 08:57 gic-ly-nyheang
+drwxr-x---+                                                            10 gic-ly-sengkim         gic-ly-sengkim         4096 Nov  6 08:26 gic-ly-sengkim
+drwxr-x---+                                                             7 gic-nhean-sonita       gic-nhean-sonita       4096 Nov 10 00:31 gic-nhean-sonita
+drwxr-x---+                                                            13 gic-nhel-sokunthika    gic-nhel-sokunthika    4096 Nov 10 21:23 gic-nhel-sokunthika
+drwxr-x---+                                                             8 gic-pak-siphaneth      gic-pak-siphaneth      4096 Oct 21 12:38 gic-pak-siphaneth
+drwxr-x---+                                                             9 gic-pen-bunnaka        gic-pen-bunnaka        4096 Oct 30 16:14 gic-pen-bunnaka
+drwxr-x---+                                                             8 gic-phai-jingpo        gic-phai-jingpo        4096 Oct 22 08:52 gic-phai-jingpo
+drwxr-x---+                                                             6 gic-phoung-sovannara   gic-phoung-sovannara   4096 Nov  3 22:37 gic-phoung-sovannara
+drwxr-x---+                                                             7 gic-phy-sopanha        gic-phy-sopanha        4096 Nov  6 14:41 gic-phy-sopanha
+drwxr-x---+                                                            12 gic-piseth-panhavorn   gic-piseth-panhavorn   4096 Nov  6 08:27 gic-piseth-panhavorn
+drwxr-x---+                                                             7 gic-pum-brusmuny       gic-pum-brusmuny       4096 Oct 30 11:26 gic-pum-brusmuny
+drwxr-x---+                                                             6 gic-ra-makara          gic-ra-makara          4096 Nov  9 23:33 gic-ra-makara
+drwxr-x---+                                                             6 gic-reng-iengseng      gic-reng-iengseng      4096 Oct 22 07:50 gic-reng-iengseng
+drwxr-x---+                                                             2 gic-rin-sopheary       gic-rin-sopheary       4096 Oct  7 20:53 gic-rin-sopheary
+drwxr-x---+                                                             9 gic-samreth-sreysoth   gic-samreth-sreysoth   4096 Nov  9 02:03 gic-samreth-sreysoth
+drwxr-x---+                                                             7 gic-say-ratanakpanha   gic-say-ratanakpanha   4096 Oct 21 08:02 gic-say-ratanakpanha
+drwxr-x---+                                                             6 gic-seng-monika        gic-seng-monika        4096 Nov 11 19:14 gic-seng-monika
+drwxr-x---+                                                            11 gic-sok-makara         gic-sok-makara         4096 Nov  8 23:42 gic-sok-makara
+drwxr-x---+                                                             6 gic-sok-vireak         gic-sok-vireak         4096 Oct  8 16:36 gic-sok-vireak
+drwxr-x---+                                                             8 gic-sun-ousaphea       gic-sun-ousaphea       4096 Nov 10 20:57 gic-sun-ousaphea
+drwxr-x---+                                                             7 gic-sun-sovisal        gic-sun-sovisal        4096 Oct 22 09:21 gic-sun-sovisal
+drwxr-x---+                                                             7 gic-teav-encheng       gic-teav-encheng       4096 Nov  5 08:19 gic-teav-encheng
+drwxr-x---+                                                             6 gic-tha-winner         gic-tha-winner         4096 Oct 23 15:03 gic-tha-winner
+drwxr-x---+                                                             6 gic-thea-rosa          gic-thea-rosa          4096 Nov 10 00:28 gic-thea-rosa
+drwxr-x---+                                                             6 gic-thon-leanghor      gic-thon-leanghor      4096 Nov 10 12:35 gic-thon-leanghor
+drwxr-x---+                                                             9 gic-thy-rathanak       gic-thy-rathanak       4096 Nov 11 16:24 gic-thy-rathanak
+drwxr-x---+                                                             8 gic-tiv-chhengsim      gic-tiv-chhengsim      4096 Nov  8 22:25 gic-tiv-chhengsim
+drwxr-x---+                                                             6 gic-vong-bunly         gic-vong-bunly         4096 Oct 17 20:22 gic-vong-bunly
+drwxr-x---+                                                             6 gic-vuon-sethar-tykun  gic-vuon-sethar-tykun  4096 Nov 10 09:56 gic-vuon-sethar-tykun
+drwxr-x---+                                                            10 gic-vutha-daraleap     gic-vutha-daraleap     4096 Nov 11 20:30 gic-vutha-daraleap
+drwxr-x---+                                                             8 gic-yan-chanthol       gic-yan-chanthol       4096 Oct 22 07:57 gic-yan-chanthol
+drwxr-x---                                                             11 pisey                  pisey                  4096 Nov  5 07:45 pisey
+--- /tmp ---
+/tmp
+total 4
+drwxrwxrwt 28 root                  root                   600 Nov 11 20:20 .
+drwxr-xr-x 20 root                  root                  4096 Oct  5 20:51 ..
+drwxrwxr-x  2 gic-vuon-sethar-tykun gic-vuon-sethar-tykun   40 Nov 10 13:29 .tmp55R8O5
+drwxrwxr-x  2 gic-vuon-sethar-tykun gic-vuon-sethar-tykun   40 Nov 10 13:30 .tmpN3gJKB
+drwxrwxr-x  2 gic-vuon-sethar-tykun gic-vuon-sethar-tykun   40 Nov 10 13:32 .tmpOhIT4X
+drwxrwxr-x  2 gic-phoung-sovannara  gic-phoung-sovannara    40 Nov  3 22:52 .tmpia8E4y
+srwxrwxr-x  1 gic-nhel-sokunthika   gic-nhel-sokunthika      0 Nov  9 14:17 code-e1630acd-7560-478e-a221-a29ce236f672
+srwxrwxr-x  1 gic-ly-sengkim        gic-ly-sengkim           0 Oct 20 17:37 code-f8c813ce-c122-4d4d-96f4-bede65c9430d
+drwxr-xr-x  2 gic-piseth-panhavorn  gic-piseth-panhavorn    40 Nov  4 10:05 hsperfdata_gic-piseth-panhavorn
+drwxr-xr-x  2 gic-thy-rathanak      gic-thy-rathanak        40 Nov 11 18:53 hsperfdata_gic-thy-rathanak
+drwx------  2 gic-nhel-sokunthika   gic-nhel-sokunthika     40 Nov  9 14:25 mcp-8j61aB
+drwx------  2 gic-nhel-sokunthika   gic-nhel-sokunthika     40 Nov 10 21:08 mcp-F9TO3j
+drwx------  2 gic-nhel-sokunthika   gic-nhel-sokunthika     40 Nov  9 17:24 mcp-HoGZcs
+drwx------  2 gic-nhel-sokunthika   gic-nhel-sokunthika     40 Nov 10 21:00 mcp-P0ffyo
+drwx------  2 gic-nhel-sokunthika   gic-nhel-sokunthika     40 Nov  9 14:21 mcp-lbkjPn
+drwx------  2 gic-nhel-sokunthika   gic-nhel-sokunthika     40 Nov 10 21:01 mcp-m7ewwR
+drwx------  2 gic-nhel-sokunthika   gic-nhel-sokunthika     40 Nov 10 21:39 mcp-nwNpmz
+drwx------  2 gic-nhel-sokunthika   gic-nhel-sokunthika     40 Nov 10 21:04 mcp-pCxYkr
+drwx------  2 gic-nhel-sokunthika   gic-nhel-sokunthika     40 Nov 10 20:49 mcp-paGmUJ
+drwx------  2 gic-nhel-sokunthika   gic-nhel-sokunthika     40 Nov 10 20:54 mcp-qcJ5sv
+drwx------  2 gic-nhel-sokunthika   gic-nhel-sokunthika     40 Nov 10 20:56 mcp-wsLGBq
+drwx------  2 pisey                 pisey                   60 Nov  1 21:55 pymp-3gmohpr6
+drwx------  2 pisey                 pisey                   60 Nov  1 21:55 pymp-b76fm61d
+drwx------  2 root                  root                    40 Oct  7 22:55 snap-private-tmp
+drwx------  3 root                  root                    60 Nov  4 06:52 systemd-private-3c88c12cd4524fad8785a5ed78f3880c-ModemManager.service-KVhhre
+drwx------  3 root                  root                    60 Oct  7 22:55 systemd-private-3c88c12cd4524fad8785a5ed78f3880c-chrony.service-Ov6r7y
+drwx------  3 root                  root                    60 Nov  4 06:52 systemd-private-3c88c12cd4524fad8785a5ed78f3880c-fwupd.service-MDapg5
+drwx------  3 root                  root                    60 Nov  4 06:52 systemd-private-3c88c12cd4524fad8785a5ed78f3880c-polkit.service-mIUC1B
+drwx------  3 root                  root                    60 Oct  7 22:55 systemd-private-3c88c12cd4524fad8785a5ed78f3880c-systemd-logind.service-lcJ0Bd
+drwx------  3 root                  root                    60 Nov  4 06:52 systemd-private-3c88c12cd4524fad8785a5ed78f3880c-upower.service-eKUXP3
+--- Home (~) ---
+/home/gic-vutha-daraleap
