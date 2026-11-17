@@ -1,0 +1,89 @@
+=== Task 2: Hard Links and Symbolic Links ===
+--- Original file ---
+19268598 -rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 35 Nov 17 11:50 config_original.txt
+TechCorp Global Configuration v3.1
+
+--- After creating hard link ---
+19268598 -rw-rw-r-- 2 gic-vutha-daraleap gic-vutha-daraleap 35 Nov 17 11:50 config_hardlink.txt
+19268598 -rw-rw-r-- 2 gic-vutha-daraleap gic-vutha-daraleap 35 Nov 17 11:50 config_original.txt
+
+--- After creating symbolic link ---
+19268598 -rw-rw-r-- 2 gic-vutha-daraleap gic-vutha-daraleap 35 Nov 17 11:50 config_hardlink.txt
+19268598 -rw-rw-r-- 2 gic-vutha-daraleap gic-vutha-daraleap 35 Nov 17 11:50 config_original.txt
+19268608 lrwxrwxrwx 1 gic-vutha-daraleap gic-vutha-daraleap 19 Nov 17 11:51 config_symlink.txt -> config_original.txt
+
+--- Content via hard link ---
+TechCorp Global Configuration v3.1
+--- Content via symbolic link ---
+TechCorp Global Configuration v3.1
+
+--- After modifying original ---
+Hard link content:
+TechCorp Global Configuration v3.1
+Updated: New security patch applied.
+Symlink content:
+TechCorp Global Configuration v3.1
+Updated: New security patch applied.
+
+--- After deleting original file ---
+Hard link still works:
+TechCorp Global Configuration v3.1
+Updated: New security patch applied.
+Symlink is broken:
+cat: config_symlink.txt: No such file or directory
+19268598 -rw-rw-r-- 1 gic-vutha-daraleap gic-vutha-daraleap 72 Nov 17 11:52 config_hardlink.txt
+19268608 lrwxrwxrwx 1 gic-vutha-daraleap gic-vutha-daraleap 19 Nov 17 11:51 config_symlink.txt -> config_original.txt
+
+--- stat on hard link ---
+  File: config_hardlink.txt
+  Size: 72        	Blocks: 8          IO Block: 4096   regular file
+Device: 252,0	Inode: 19268598    Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1059/gic-vutha-daraleap)   Gid: ( 1059/gic-vutha-daraleap)
+Access: 2026-11-17 11:53:05.943968044 +0700
+Modify: 2026-11-17 11:52:14.061276656 +0700
+Change: 2026-11-17 11:52:43.303102714 +0700
+ Birth: 2026-11-17 11:50:57.182734012 +0700
+--- readlink on symlink ---
+config_original.txt
+
+--- Symlink to directory ---
+lrwxrwxrwx 1 gic-vutha-daraleap gic-vutha-daraleap 17 Nov 17 11:54 web_shortcut -> projects/frontend
+index.html
+
+--- Real-world symlinks in /usr/bin ---
+lrwxrwxrwx 1 root root      10 Mar 21  2026 /usr/bin/python3 -> python3.14
+lrwxrwxrwx 1 root root      17 Mar 21  2026 /usr/bin/python3-config -> python3.14-config
+-rwxr-xr-x 1 root root 7477160 Aug 20 17:41 /usr/bin/python3.14
+lrwxrwxrwx 1 root root      34 Aug 20 17:41 /usr/bin/python3.14-config -> x86_64-linux-gnu-python3.14-config
+lrwxrwxrwx 1 root root 24 Aug 26 12:01 /usr/bin/editor -> /etc/alternatives/editor
+--- Symlinks in /etc/alternatives ---
+total 12
+drwxr-xr-x   2 root root 4096 Nov  1 21:51 .
+drwxr-xr-x 114 root root 4096 Nov 14 06:13 ..
+-rw-r--r--   1 root root  100 Mar 31  2026 README
+lrwxrwxrwx   1 root root   23 Aug 26 12:01 arptables -> /usr/sbin/arptables-nft
+lrwxrwxrwx   1 root root   31 Aug 26 12:01 arptables-restore -> /usr/sbin/arptables-nft-restore
+lrwxrwxrwx   1 root root   28 Aug 26 12:01 arptables-save -> /usr/sbin/arptables-nft-save
+lrwxrwxrwx   1 root root   13 Aug 26 11:46 awk -> /usr/bin/gawk
+lrwxrwxrwx   1 root root   29 Aug 26 12:01 awk.1.gz -> /usr/share/man/man1/gawk.1.gz
+lrwxrwxrwx   1 root root   38 Feb 13  2026 builtins.7.gz -> /usr/share/man/man7/bash-builtins.7.gz
+lrwxrwxrwx   1 root root   12 Feb 23  2026 c++ -> /usr/bin/g++
+lrwxrwxrwx   1 root root   28 Feb 23  2026 c++.1.gz -> /usr/share/man/man1/g++.1.gz
+lrwxrwxrwx   1 root root   16 Feb 23  2026 c89 -> /usr/bin/c89-gcc
+lrwxrwxrwx   1 root root   32 Feb 23  2026 c89.1.gz -> /usr/share/man/man1/c89-gcc.1.gz
+lrwxrwxrwx   1 root root   16 Feb 23  2026 c99 -> /usr/bin/c99-gcc
+lrwxrwxrwx   1 root root   32 Feb 23  2026 c99.1.gz -> /usr/share/man/man1/c99-gcc.1.gz
+lrwxrwxrwx   1 root root   12 Feb 23  2026 cc -> /usr/bin/gcc
+lrwxrwxrwx   1 root root   28 Feb 23  2026 cc.1.gz -> /usr/share/man/man1/gcc.1.gz
+lrwxrwxrwx   1 root root   12 Feb 23  2026 cpp -> /usr/bin/cpp
+lrwxrwxrwx   1 root root   22 Aug 26 12:01 ebtables -> /usr/sbin/ebtables-nft
+--- Challenge Links ---
+19268615 -rw-rw-r-- 3 gic-vutha-daraleap gic-vutha-daraleap 35 Nov 17 11:55 links_lab/eng_data.txt
+19268615 -rw-rw-r-- 3 gic-vutha-daraleap gic-vutha-daraleap 35 Nov 17 11:55 links_lab/hr_data.txt
+19268615 -rw-rw-r-- 3 gic-vutha-daraleap gic-vutha-daraleap 35 Nov 17 11:55 links_lab/shared_data.txt
+lrwxrwxrwx 1 gic-vutha-daraleap gic-vutha-daraleap 27 Nov 17 11:55 quick_access -> links_lab/projects/frontend
+index.html
+Shared resource across departments
+Shared resource across departments
+19268615 -rw-rw-r-- 2 gic-vutha-daraleap gic-vutha-daraleap 35 Nov 17 11:55 links_lab/eng_data.txt
+19268615 -rw-rw-r-- 2 gic-vutha-daraleap gic-vutha-daraleap 35 Nov 17 11:55 links_lab/hr_data.txt

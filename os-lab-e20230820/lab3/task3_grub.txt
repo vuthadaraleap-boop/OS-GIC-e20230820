@@ -1,0 +1,123 @@
+=== Task 3: GRUB Bootloader Exploration ===
+--- Current kernel version ---
+7.0.0-38-generic
+
+--- GRUB directory listing ---
+total 2408
+drwxr-xr-x 5 root root    4096 Nov 11 06:42 .
+drwxr-xr-x 4 root root    4096 Nov 11 06:42 ..
+drwxr-xr-x 2 root root    4096 Oct  5 20:52 fonts
+-rw-r--r-- 1 root root     712 Aug 26 11:47 gfxblacklist.txt
+-rw------- 1 root root    9634 Nov 11 06:42 grub.cfg
+-rw-r--r-- 1 root root    1024 Oct  7 22:55 grubenv
+drwxr-xr-x 2 root root   12288 Oct  5 20:52 i386-pc
+drwxr-xr-x 2 root root    4096 Oct  5 20:52 locale
+-rw-r--r-- 1 root root 2413171 Oct  5 20:52 unicode.pf2
+
+--- GRUB config (/boot/grub/grub.cfg) - first 60 lines ---
+head: cannot open '/boot/grub/grub.cfg' for reading: Permission denied
+
+--- GRUB defaults (/etc/default/grub) ---
+# If you change this file or any /etc/default/grub.d/*.cfg file,
+# run 'update-grub' afterwards to update /boot/grub/grub.cfg.
+# For full documentation of the options in these files, see:
+#   info -f grub -n 'Simple configuration'
+
+GRUB_DEFAULT=0
+GRUB_TIMEOUT_STYLE=hidden
+GRUB_TIMEOUT=0
+GRUB_DISTRIBUTOR=`( . /etc/os-release && echo ${NAME} )`
+GRUB_CMDLINE_LINUX_DEFAULT=""
+GRUB_CMDLINE_LINUX=""
+
+# If your computer has multiple operating systems installed, then you
+# probably want to run os-prober. However, if your computer is a host
+# for guest OSes installed via LVM or raw disk devices, running
+# os-prober can cause damage to those guest OSes as it mounts
+# filesystems to look for things.
+#GRUB_DISABLE_OS_PROBER=false
+
+# Uncomment to enable BadRAM filtering, modify to suit your needs
+# This works with Linux (no patch required) and with any kernel that obtains
+# the memory map information from GRUB (GNU Mach, kernel of FreeBSD ...)
+#GRUB_BADRAM="0x01234567,0xfefefefe,0x89abcdef,0xefefefef"
+
+# Uncomment to disable graphical terminal
+#GRUB_TERMINAL=console
+
+# The resolution used on graphical terminal
+# note that you can use only modes which your graphic card supports via VBE/GOP/UGA
+# you can see them in real GRUB with the command `videoinfo'
+#GRUB_GFXMODE=640x480
+
+# Uncomment if you don't want GRUB to pass "root=UUID=xxx" parameter to Linux
+#GRUB_DISABLE_LINUX_UUID=true
+
+# Uncomment to disable generation of recovery mode menu entries
+#GRUB_DISABLE_RECOVERY="true"
+
+# Uncomment to get a beep at grub start
+#GRUB_INIT_TUNE="480 440 1"
+
+--- Installed kernels in /boot ---
+lrwxrwxrwx 1 root root  24 Nov 11 06:38 /boot/vmlinuz -> vmlinuz-7.0.0-43-generic
+-rw------- 1 root root 17M Sep  4 14:54 /boot/vmlinuz-7.0.0-38-generic
+-rw------- 1 root root 17M Oct 23 19:03 /boot/vmlinuz-7.0.0-43-generic
+lrwxrwxrwx 1 root root  24 Nov 11 06:42 /boot/vmlinuz.old -> vmlinuz-7.0.0-38-generic
+lrwxrwxrwx 1 root root  27 Nov 11 06:38 /boot/initrd.img -> initrd.img-7.0.0-43-generic
+-rw------- 1 root root 61M Oct  7 13:11 /boot/initrd.img-7.0.0-38-generic
+-rw------- 1 root root 61M Nov 11 06:41 /boot/initrd.img-7.0.0-43-generic
+lrwxrwxrwx 1 root root  27 Nov 11 06:42 /boot/initrd.img.old -> initrd.img-7.0.0-38-generic
+
+--- Early kernel boot messages (first 40 lines) ---
+-- No entries --
+
+--- GRUB scripts in /etc/grub.d/ ---
+total 144
+drwxr-xr-x   2 root root  4096 Aug 26 12:01 .
+drwxr-xr-x 114 root root  4096 Nov 14 06:13 ..
+-rwxr-xr-x   1 root root 11534 Jul  1 16:30 00_header
+-rwxr-xr-x   1 root root  6295 Mar  6  2026 05_debian_theme
+-rwxr-xr-x   1 root root 17611 Jul  1 16:30 10_linux
+-rwxr-xr-x   1 root root 42690 Jul  1 16:30 10_linux_zfs
+-rwxr-xr-x   1 root root 14430 Jul  1 16:30 20_linux_xen
+-rwxr-xr-x   1 root root 13619 Jul  1 16:30 30_os-prober
+-rwxr-xr-x   1 root root  1174 Jul  1 16:30 30_uefi-firmware
+-rwxr-xr-x   1 root root   744 Jun 18 21:01 35_fwupd
+-rwxr-xr-x   1 root root   214 Jul  1 16:30 40_custom
+-rwxr-xr-x   1 root root   215 Jul  1 16:30 41_custom
+-rw-r--r--   1 root root   483 Jul  1 16:30 README
+
+=== Part B: GRUB Customization ===
+--- Modified /etc/default/grub ---
+GRUB_DEFAULT=0
+GRUB_TIMEOUT_STYLE=menu
+GRUB_TIMEOUT=10
+GRUB_CMDLINE_LINUX_DEFAULT=""
+GRUB_CMDLINE_LINUX=""
+
+--- Custom script /etc/grub.d/40_custom_techcorp ---
+#!/bin/sh
+exec tail -n +3 $0
+menuentry "TechCorp Training VM — Boot Standard" {
+    set root=(hd0,msdos1)
+    linux /boot/vmlinuz-7.0.0-38-generic root=/dev/sda1
+    initrd /boot/initrd.img-7.0.0-38-generic
+}
+
+--- Final /etc/default/grub (with background) ---
+GRUB_DEFAULT=0
+GRUB_TIMEOUT=10
+GRUB_CMDLINE_LINUX_DEFAULT=""
+GRUB_BACKGROUND="/boot/grub/grub_bg.png"
+
+=== Part C: Boot Recovery ===
+Boot recovery successful on Tue Nov 17 11:58:17 AM +07 2026
+7.0.0-38-generic
+ 11:58:17 up 40 days, 13:02, 23 users,  load average: 0.17, 0.27, 0.26
+
+--- Challenge GRUB ---
+GRUB_DEFAULT=1
+GRUB_COLOR_NORMAL="light-gray/black"
+GRUB_COLOR_HIGHLIGHT="yellow/blue"
+grep: /boot/grub/grub.cfg: Permission denied

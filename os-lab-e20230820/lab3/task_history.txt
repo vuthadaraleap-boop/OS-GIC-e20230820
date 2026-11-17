@@ -1,0 +1,101 @@
+=== Full Command History ===
+    printf("CPU Cores: %d\n", tc_get_cpu_count());
+    printf("Memory   : %ld MB\n", tc_get_memory_mb());
+    printf("======================================\n");
+    return 0;
+}
+EOF
+
+  943  gcc -fPIC -c techcorp_sysinfo.c -o techcorp_sysinfo.o
+  944  gcc -fPIC -c techcorp_memory.c -o techcorp_memory.o
+  945  gcc -shared -o libtechcorp_sysinfo.so techcorp_sysinfo.o techcorp_memory.o
+  946  gcc sysinfo_test.c -L. -ltechcorp_sysinfo -o sysinfo_test
+  947  gcc sysinfo_test_v2.c -L. -ltechcorp_sysinfo -o sysinfo_test_v2
+  948  echo "--- Partner A: Compiled shared library ---" >> ../task5_shared_library.txt
+  949  file libtechcorp_sysinfo.so >> ../task5_shared_library.txt
+  950  ls -l libtechcorp_sysinfo.so >> ../task5_shared_library.txt
+  951  echo "--- Partner B: Test program written ---" >> ../task5_shared_library.txt
+  952  cat sysinfo_test.c >> ../task5_shared_library.txt
+  953  echo "--- Integration: ldd on test program ---" >> ../task5_shared_library.txt
+  954  ldd ./sysinfo_test >> ../task5_shared_library.txt 2>&1
+  955  echo "--- Integration: Test run ---" >> ../task5_shared_library.txt
+  956  LD_LIBRARY_PATH=. ./sysinfo_test >> ../task5_shared_library.txt
+  957  echo "--- Phase 4: v2 test run ---" >> ../task5_shared_library.txt
+  958  LD_LIBRARY_PATH=. ldd ./sysinfo_test_v2 >> ../task5_shared_library.txt 2>&1
+  959  LD_LIBRARY_PATH=. ./sysinfo_test_v2 >> ../task5_shared_library.txt
+  960  echo "--- Pair Information ---" >> ../task5_shared_library.txt
+  961  echo "Role A (Library Author -> v2 Tester): Vutha Daraleap - e20230820" >> ../task5_shared_library.txt
+  962  echo "Role B (Test Author -> v2 Library Extender): Partner - GIC" >> ../task5_shared_library.txt
+  963  cd ..
+  964  ls -la ~/os-gic-e20230820/os-lab-e20230820/lab3
+  965  cd ~/os-gic-e20230820/os-lab-e20230820/lab3
+  966  mkdir -p evidence
+  967  cp task1_wildcards.txt evidence/wildcards.txt
+  968  cp task2_links.txt evidence/links.txt
+  969  cat task3_grub.txt task4_shared_objects.txt task5_shared_library.txt > evidence/replacement.txt
+  970  cat << 'EOF' > README.md
+# OS Lab 3 — Wildcards, Links, GRUB & Shared Libraries
+
+- **Student Name:** Vutha Daraleap
+- **Student ID:** e20230820
+- **Date:** November 17, 2026
+
+---
+
+## Task 1 — Mastering Wildcards
+
+Used `*`, `?`, `[...]`, `[!...]`, and `{...}` brace expansion to filter, copy, create, and remove groups of files inside `wildcard_lab/` and `csv_archive/`. Full output is recorded in `task1_wildcards.txt` and `evidence/wildcards.txt`.
+
+![Task 1 Challenge](images/task1_challenge.png)
+
+---
+
+## Task 2 — Hard Links and Symbolic Links
+
+Created and inspected hard links (`ln`) and symbolic links (`ln -s`) using `ls -li`, `stat`, and `readlink`. Full output is saved in `task2_links.txt` and `evidence/links.txt`.
+
+![Task 2 Challenge](images/task2_challenge.png)
+
+---
+
+## Task 3 — GRUB: Exploration, Customization & Boot Recovery
+
+Audited `/boot/grub/grub.cfg`, `/etc/default/grub`, `/etc/grub.d/`, kernel images (`vmlinuz`, `initrd`), and boot logs in `task3_grub.txt`.
+
+![VM Snapshot](images/task3_snapshot.png)
+![GRUB Timeout](images/task3_timeout.png)
+![GRUB Custom Entry](images/task3_custom_entry.png)
+![GRUB Background](images/task3_background.png)
+![GRUB Recovery](images/task3_recovery.png)
+![GRUB Break](images/task3_break.png)
+![GRUB Manual Boot](images/task3_manual_boot.png)
+![GRUB Restored](images/task3_restored.png)
+![GRUB Challenge](images/task3_challenge.png)
+
+---
+
+## Task 4 — Shared Objects (Dynamic Libraries) Exploration
+
+Inspected dynamic library dependencies and ELF headers using `ldd`, `ldconfig -p`, `file`, `readelf -h`, and `/proc/$$/maps`. Full output is recorded in `task4_shared_objects.txt`.
+
+![Task 4 Challenge](images/task4_challenge.png)
+
+---
+
+## Task 5 — Build & Register a Shared Library (Pair Task)
+
+Designed `techcorp_sysinfo.h`, compiled position-independent code (`-fPIC`) into `libtechcorp_sysinfo.so`, extended it with `tc_get_memory_mb()` in `techcorp_memory.c`, and linked `sysinfo_test` and `sysinfo_test_v2`. Full output is recorded in `task5_shared_library.txt`.
+
+![Pair Design](images/task5_pair_design.png)
+![Pair Integration](images/task5_pair_integration.png)
+
+---
+
+## Full Command History
+
+![Full History](images/full_history.png)
+EOF
+
+  971  ls
+  972  echo "=== Full Command History ===" > task_history.txt
+  973  history | tail -n 100 >> task_history.txt

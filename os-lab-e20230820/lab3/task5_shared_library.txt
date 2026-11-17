@@ -1,0 +1,51 @@
+=== Task 5: Build and Register a Shared Library ===
+--- API Design (header file) ---
+#ifndef TECHCORP_SYSINFO_H
+#define TECHCORP_SYSINFO_H
+
+const char* tc_get_hostname(void);
+const char* tc_get_uptime(void);
+int tc_get_cpu_count(void);
+long tc_get_memory_mb(void);
+
+#endif
+--- Partner A: Compiled shared library ---
+libtechcorp_sysinfo.so: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=973c0a36789430f35e304852bc62be17b8dcf0e9, not stripped
+-rwxrwxr-x 1 gic-vutha-daraleap gic-vutha-daraleap 16120 Nov 17 12:07 libtechcorp_sysinfo.so
+--- Partner B: Test program written ---
+#include <stdio.h>
+#include "techcorp_sysinfo.h"
+
+int main(void) {
+    printf("=== TechCorp System Info Report ===\n");
+    printf("Hostname : %s\n", tc_get_hostname());
+    printf("Uptime   : %s\n", tc_get_uptime());
+    printf("CPU Cores: %d\n", tc_get_cpu_count());
+    printf("===================================\n");
+    return 0;
+}
+--- Integration: ldd on test program ---
+	linux-vdso.so.1 (0x000075eeb9f4d000)
+	libtechcorp_sysinfo.so => not found
+	libc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x000075eeb9c00000)
+	/lib64/ld-linux-x86-64.so.2 (0x000075eeb9f4f000)
+--- Integration: Test run ---
+=== TechCorp System Info Report ===
+Hostname : i4gic-os
+Uptime   : 973 hours, 12 minutes
+CPU Cores: 8
+===================================
+--- Phase 4: v2 test run ---
+	linux-vdso.so.1 (0x00007458da838000)
+	libtechcorp_sysinfo.so => ./libtechcorp_sysinfo.so (0x00007458da826000)
+	libc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x00007458da400000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007458da83a000)
+=== TechCorp System Info Report v2 ===
+Hostname : i4gic-os
+Uptime   : 973 hours, 12 minutes
+CPU Cores: 8
+Memory   : 7422 MB
+======================================
+--- Pair Information ---
+Role A (Library Author -> v2 Tester): Vutha Daraleap - e20230820
+Role B (Test Author -> v2 Library Extender): Partner - GIC
