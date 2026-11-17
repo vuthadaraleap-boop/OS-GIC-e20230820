@@ -1,0 +1,24 @@
+gic-vut+ 2470202 2464607 2470202  0    5 11:20 pts/3    00:00:00 ./threads_observe
+gic-vut+ 2470202 2464607 2470204  0    5 11:20 pts/3    00:00:00 ./threads_observe
+gic-vut+ 2470202 2464607 2470205  0    5 11:20 pts/3    00:00:00 ./threads_observe
+gic-vut+ 2470202 2464607 2470206  0    5 11:20 pts/3    00:00:00 ./threads_observe
+gic-vut+ 2470202 2464607 2470207  0    5 11:20 pts/3    00:00:00 ./threads_observe
+gic-vut+ 2470261 2464607 2470261  0    5 11:21 pts/3    00:00:00 ./threads_observe
+gic-vut+ 2470261 2464607 2470263  0    5 11:21 pts/3    00:00:00 ./threads_observe
+gic-vut+ 2470261 2464607 2470264  0    5 11:21 pts/3    00:00:00 ./threads_observe
+gic-vut+ 2470261 2464607 2470265  0    5 11:21 pts/3    00:00:00 ./threads_observe
+gic-vut+ 2470261 2464607 2470266  0    5 11:21 pts/3    00:00:00 ./threads_observe
+
+    PID    SPID TTY          TIME CMD
+2470261 2470261 pts/3    00:00:00 threads_observe
+2470261 2470263 pts/3    00:00:00 threads_observe
+2470261 2470264 pts/3    00:00:00 threads_observe
+2470261 2470265 pts/3    00:00:00 threads_observe
+2470261 2470266 pts/3    00:00:00 threads_observe
+
+--- /proc/2470261/task/ listing ---
+2470261
+2470263
+2470264
+2470265
+2470266

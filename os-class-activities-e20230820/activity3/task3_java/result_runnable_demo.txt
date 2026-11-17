@@ -1,0 +1,12 @@
+Command 'java' not found, but can be installed with:
+apt install default-jre                   # version 2:1.25-77, or
+apt install openjdk-25-jre-headless       # version 25.0.3+9-2~26.04.2
+apt install openjdk-11-jre-headless       # version 11.0.31+11-1ubuntu1~26.04.2
+apt install openjdk-17-crac-jre-headless  # version 17.0.19+10-0ubuntu1~26.04.1
+apt install openjdk-17-jre-headless       # version 17.0.19+10-1~26.04.2
+apt install openjdk-21-crac-jre-headless  # version 21.0.11+10-0ubuntu1~26.04.1
+apt install openjdk-21-jre-headless       # version 21.0.11+10-1~26.04.2
+apt install openjdk-25-crac-jre-headless  # version 25.0.3+9-0ubuntu1~26.04.1
+apt install openjdk-26-jre-headless       # version 26.0.1+8-2~26.04.2
+apt install openjdk-8-jre-headless        # version 8u492-ga~us2-0ubuntu1~26.04.1
+Ask your administrator to install one of them.

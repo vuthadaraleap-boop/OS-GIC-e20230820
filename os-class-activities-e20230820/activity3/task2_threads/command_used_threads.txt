@@ -1,0 +1,20 @@
+    }
+    return 0;
+}
+EOF
+
+  700  gcc -o threads_observe threads_observe.c -pthread
+  701  ./threads_observe &
+  702  OBS_PID=$!
+  703  sleep 1
+  704  ./threads_observe &
+  705  OBS_PID=$!
+  706  ps -eLf | grep "[t]hreads_observe" > result_observe_linux.txt
+  707  echo "" >> result_observe_linux.txt
+  708  ps -T -p $OBS_PID >> result_observe_linux.txt
+  709  echo "" >> result_observe_linux.txt
+  710  echo "--- /proc/$OBS_PID/task/ listing ---" >> result_observe_linux.txt
+  711  ls /proc/$OBS_PID/task/ >> result_observe_linux.txt
+  712  kill $OBS_PID 2>/dev/null
+  713  wait $OBS_PID 2>/dev/null
+  714  history | tail -n 20 > command_used_threads.txt
